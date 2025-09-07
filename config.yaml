@@ -1,0 +1,37 @@
+# Misinformation Detector Configuration
+
+# Model paths
+model_paths:
+  classifier: 'models/classifier.pkl'
+  vectorizer: 'models/vectorizer.pkl'
+  feature_extractors: 'models/feature_extractors.pkl'
+
+# Analysis thresholds
+thresholds:
+  risk_threshold: 0.7  # High risk threshold
+  confidence_threshold: 0.6  # Minimum confidence for predictions
+
+# Feature settings
+features:
+  enabled_features:
+    - text_analysis
+    - url_validation
+    - source_credibility
+    - linguistic_patterns
+  language_support:
+    - en  # English
+    - fr  # French
+    - es  # Spanish
+
+# Privacy settings
+privacy:
+  anonymize_entities: true
+  store_analysis_history: false
+  data_retention_days: 30
+
+# Logging settings
+logging:
+  level: INFO
+  file: 'logs/detector.log'
+  max_size: 1048576  # 1MB
+  backup_count: 3
